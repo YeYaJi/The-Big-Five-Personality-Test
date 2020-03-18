@@ -1,24 +1,28 @@
 # 进行答题，返回输入的答案[list]
 def show_question(questions):
+    grades = []
     for i, sentience in enumerate(questions):
         print("第%d题\n" % (i + 1))
         print(sentience)
         print("请输入分数1～5")
         grade_in = input(":")
-        grades = Judgement_input(grade_in)
+        grade=Judgement_input(grade_in)
+        grades.append(grade)
+        print(grades)
+
     return grades
 
 
 # 判断输入异常
 def Judgement_input(grade_in):
-    grades = [0]
+
     cord = [1, 2, 3, 4, 5]
     while 1:
         if grade_in.isdigit():
 
             grade = int(grade_in)
             if grade in cord:
-                grades.append(grade)
+
                 break
             else:
                 print("请确认数字的大小")
@@ -26,7 +30,7 @@ def Judgement_input(grade_in):
         else:
             print("请输入数字")
             grade_in = input(":")
-    return grades
+    return grade
 
 # 把反向的分数取负
 def alculate_reverse_score(file_re_index, grades):
