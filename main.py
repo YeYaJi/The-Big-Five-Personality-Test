@@ -2,11 +2,11 @@ import sys
 import functions as fc
 
 ##################################################################################
-sys.path.append(r"/home/gsh/桌面/git1")  # functions.py的path
+sys.path.append(r"./")  # functions.py的path
 ####################################################################################
-questions = open(r"/home/gsh/text-1", "r")  # 读取题目
-file_re_index = open(r"/home/gsh/re-index", "r")  # 读取反向索引
-file_every_index = open(r"/home/gsh/all-index", "r")  # 依次分行读取每个大维度下的小维度索引：第一行=注释,第二行=n1~n6,第三行=注释,第四行=c1~c6,…………,
+questions = open(r"./text-1", "r")  # 读取题目
+file_re_index = open(r"./re-index", "r")  # 读取反向索引
+file_every_index = open(r"./all-index", "r")  # 依次分行读取每个大维度下的小维度索引：第一行=注释,第二行=n1~n6,第三行=注释,第四行=c1~c6,…………,
 ##################################################################################
 grades = fc.show_question(questions)  # 得到所有输入的分数
 grades = fc.alculate_reverse_score(file_re_index, grades)  # 把反向的分数取负
