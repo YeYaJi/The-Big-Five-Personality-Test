@@ -8,7 +8,7 @@ def show_question(questions):
         grade_in = input(":")
         grade=Judgement_input(grade_in)
         grades.append(grade)
-        print(grades)
+        
 
     return grades
 
