@@ -30,7 +30,8 @@ def Judgement_input(grade_in):
         else:
             print("请输入数字")
             grade_in = input(":")
-    return grade
+       
+    return grade-1
 
 # 把反向的分数取负
 def alculate_reverse_score(file_re_index, grades):
@@ -38,7 +39,7 @@ def alculate_reverse_score(file_re_index, grades):
     for index in file_re_index:
         re_index.append(int(index))
     for i in re_index:
-        grades[i] = ~grades[i] + 1
+        grades[i] = 4-grades[i]
     return grades
 
 # 分数转化为字典格式{key=index：value=grades}
