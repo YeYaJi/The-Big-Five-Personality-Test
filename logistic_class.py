@@ -1,33 +1,33 @@
 import sys
 class solution():
-    def Judgement_input(self,grade_in):
+    def Judgement_input(self, grade_in):
         cord = [1, 2, 3, 4, 5]
         while 1:
             if grade_in.isdigit():
-
                 grade = int(grade_in)
                 if grade in cord:
                     break
                 else:
-                    print("请输入数字1～5")
+                    print("请输入整数1～5")
                     grade_in = input(":")
             else:
-                print("请输入数字")
+                print("请输入整数1～5")
                 grade_in = input(":")
         return grade
     def show_question(self,questions):
         grades = []
-        for i, sentience in enumerate(questions):
+        for i,sentience in enumerate(questions):
+
             print("第%d题\n" % (i + 1))
             print(sentience)
-            print("请输入分数1～5")
+            print("请输入整数1～5")
             grade_in = input(":")
             grade = solution.Judgement_input(self,grade_in)
             grades.append(grade)
 
         return grades
     # 判断输入异常
-    # 把反向的分数取负
+    # 计算反向分数
     def alculate_reverse_score(self,file_re_index, grades):
         re_index = [0]
         for index in file_re_index:
