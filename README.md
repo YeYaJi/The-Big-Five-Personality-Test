@@ -14,15 +14,71 @@
 
 ### 2.Tkinter使用
 
-创建窗口
+（1）创建窗口
 
 ```
 from tkinter import *
 window = Tk()
 window.title("性格测试")#窗口名
-window.geometry('600x500')#窗口大小,可以随意制定
+window.geometry('600x200')#窗口大小,可以随意制定
 window.mainloop()
 ```
 
-![2020-03-25 11-46-44 的屏幕截图](/home/a/图片/2020-03-25 11-46-44 的屏幕截图.png)
+![1](/home/a/图片/1.png)
+
+（2）添加文本控件
+
+```
+from tkinter import *
+window = Tk()
+window.title("性格测试")#窗口名
+window.geometry('600x200')#窗口大小,可以随意制定
+
+#添加文本控件
+
+text=Text(window,width=60,height=4)#除了大小外，其他属性如背景颜色等见[网站](https://blog.csdn.net/weixin_42272768/article/details/100725243)。
+
+text.insert(INSERT,'Hellow world')
+
+text.pack()
+
+window.mainloop()
+```
+
+
+
+![2](/home/a/图片/2.png)
+
+
+
+（3）添加button控件
+
+```
+from tkinter import *
+window = Tk()
+window.title("性格测试")#窗口名
+window.geometry('600x200')#窗口大小,可以随意制定
+
+#添加文本控件
+
+text=Text(window,width=60,height=4)
+text.insert(INSERT,'hellow world')
+text.pack()
+
+def last_quesiton():
+    text.delete(0.0,END)
+    s1='last'
+    text.insert(INSERT,s1)
+
+last_question_button=Button(window,text="上一题",command=last_quesiton)
+last_question_button.pack()
+
+window.mainloop()
+```
+
+![3](/home/a/图片/3.png)
+
+点击上一题后：
+
+![2020-03-26 12-11-41 的屏幕截图](/home/a/图片/2020-03-26 12-11-41 的屏幕截图.png)
 
